@@ -2,7 +2,7 @@ github-closer
 ---
 [![Build Status](https://travis-ci.org/s-tajima/github-closer.svg?branch=master)](https://travis-ci.org/s-tajima/github-closer)
 
-A useful tool for closing GitHub Issue that be left for a long time.
+A useful tool for closing GitHub Issue/Pull Requests that be left for a long time.
 
 ```
 $ ./github-closer --debug
@@ -21,7 +21,7 @@ $ ./github-closer --debug
 
 ## Concepts
 
-* It would be better to keep status that only Issue/Pull Request that actually needed is opened.
+* It would be better to keep status that only Issues/Pull Requests that actually needed is opened.
 * So, let's automate to closing Issues/Pull Requests that be left for a long time.
 * Github Issues/Pull Requests is easily reopened if you desired.
 
@@ -56,7 +56,7 @@ Usage:
   github-closer [OPTIONS]
 
 Application Options:
-  -q, --query=    Query strings. For search Issues/PullRequests. (default: is:issue is:open)
+  -q, --query=    Query strings. For search Issues/Pull Requests. (default: is:issue is:open)
   -d, --duration= Duration. Issues would be closed if left over this duration. (days) (default: 7)
   -c, --comment=  Comment. Would be posted before an Issue is closed. (default: :alarm_clock: this Issue was left for a long time.)
   -n, --dry-run   If true, show target Issues without closing.
