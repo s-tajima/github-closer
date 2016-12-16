@@ -9,8 +9,8 @@ import (
 )
 
 type Options struct {
-	Query    string `short:"q" long:"query" default:"is:issue is:open" description:"Query strings. For search Issues/Pull Requests."`
-	Duration int    `short:"d" long:"duration" default:"7" description:"Duration. Issues would be closed if left over this duration. (days)"`
+	Query    string `short:"q" long:"query" default:"type:issue is:open" description:"Query strings. For search Issues/Pull Requests."`
+	Duration int    `short:"d" long:"duration" default:"30" description:"Duration. Issues would be closed if left over this duration. (days)"`
 	Comment  string `short:"c" long:"comment" default:":alarm_clock: this Issue was left for a long time." description:"Comment. Would be posted before an Issue is closed."`
 	DryRun   bool   `short:"n" long:"dry-run" description:"If true, show target Issues without closing."`
 	RunOnce  bool   `short:"o" long:"run-once" description:"If true, close only one Issue."`
