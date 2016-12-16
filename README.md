@@ -44,7 +44,7 @@ Set your configuration as Environment Variables.
 export GITHUB_ACCESS_TOKEN=
 export GITHUB_ORGANIZATION=
 export GITHUB_REPO=
-export GITHUB_TEAM=
+export GITHUB_TEAM= # github-closer works only Issues/Pull Requests that be created by this team members.
 ```
 You can use .env file as well.
 
