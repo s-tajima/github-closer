@@ -23,7 +23,7 @@ $ ./github-closer --debug
 
 * It would be better to keep status that only Issues/Pull Requests that actually needed is opened.
 * So, let's automate to closing Issues/Pull Requests that be left for a long time.
-* Github Issues/Pull Requests is easily reopened if you desired.
+* No worries, Issues/Pull Requests is easily reopened if you desired.
 
 ## Requirements
 
