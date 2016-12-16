@@ -12,11 +12,18 @@ $ ./github-closer --debug
 
 ## Index
 
+* [Concepts](#concepts)
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Configure](#configure)
 * [Usage](#usage)       
 * [License](#license)    
+
+## Concepts
+
+* It would be better to keep status that only Issue/Pull Request that actually needed is opened.
+* So, let's automate to closing Issues/Pull Requests that be left for a long time.
+* Github Issues/Pull Requests is easily reopened if you desired.
 
 ## Requirements
 
