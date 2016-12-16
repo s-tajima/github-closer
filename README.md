@@ -56,7 +56,7 @@ Usage:
   github-closer [OPTIONS]
 
 Application Options:
-  -q, --query=    Query strings. For search Issues/Pull Requests. (default: type:issue is:open)
+  -q, --query=    Query strings. For search Issues/Pull Requests. (default: type:issue is:open -label:Pending)
   -d, --duration= Duration. Issues would be closed if left over this duration. (days) (default: 30)
   -c, --comment=  Comment. Would be posted before an Issue is closed. (default: :alarm_clock: this Issue was left for a long time.)
   -n, --dry-run   If true, show target Issues without closing.
