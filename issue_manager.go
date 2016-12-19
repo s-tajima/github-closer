@@ -37,10 +37,6 @@ func NewIssueManager(organization string, repository string, team string, token 
 }
 
 func (im *IssueManager) FindIssues(spec string) ([]*github.Issue, error) {
-	members, err := im.findUsersByTeamName(im.Team)
-	if err != nil {
-		return nil, err
-	}
 	queryString := im.buildQuery(spec)
 	searchResult, _, err := im.Client.Search.Issues(queryString, &github.SearchOptions{})
 	if err != nil {
@@ -48,6 +44,19 @@ func (im *IssueManager) FindIssues(spec string) ([]*github.Issue, error) {
 	}
 
 	var targets []*github.Issue
+
+	if im.Team == "" {
+		for i, _ := range searchResult.Issues {
+			targets = append(targets, &searchResult.Issues[i])
+		}
+		return targets, nil
+	}
+
+	members, err := im.findUsersByTeamName(im.Team)
+	if err != nil {
+		return nil, err
+	}
+
 Loop:
 	for i, issue := range searchResult.Issues {
 		for _, member := range members {
