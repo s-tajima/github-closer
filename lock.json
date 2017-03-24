@@ -1,0 +1,76 @@
+{
+    "memo": "9a281f8bd9bc5bca5f1ad41c0db67aa22119add0d9ff15a6f550a9b38c4450e0",
+    "projects": [
+        {
+            "name": "github.com/golang/protobuf",
+            "branch": "master",
+            "revision": "c9c7427a2a70d2eb3bafa0ab2dc163e45f143317",
+            "packages": [
+                "proto"
+            ]
+        },
+        {
+            "name": "github.com/google/go-github",
+            "branch": "master",
+            "revision": "69fd0adc8ab606780549a072f2e3b3f795d75832",
+            "packages": [
+                "github"
+            ]
+        },
+        {
+            "name": "github.com/google/go-querystring",
+            "branch": "master",
+            "revision": "53e6ce116135b80d037921a7fdd5138cf32d7a8a",
+            "packages": [
+                "query"
+            ]
+        },
+        {
+            "name": "github.com/jessevdk/go-flags",
+            "version": "v1.2.0",
+            "revision": "48cf8722c3375517aba351d1f7577c40663a4407",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/joho/godotenv",
+            "version": "v1.1",
+            "revision": "726cc8b906e3d31c70a9671c90a13716a8d3f50d",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "golang.org/x/net",
+            "branch": "master",
+            "revision": "a6577fac2d73be281a500b310739095313165611",
+            "packages": [
+                "context"
+            ]
+        },
+        {
+            "name": "golang.org/x/oauth2",
+            "branch": "master",
+            "revision": "1611bb46e67abc64a71ecc5c3ae67f1cbbc2b921",
+            "packages": [
+                ".",
+                "internal"
+            ]
+        },
+        {
+            "name": "google.golang.org/appengine",
+            "version": "v1.0.0",
+            "revision": "150dc57a1b433e64154302bdc40b6bb8aefa313a",
+            "packages": [
+                "internal",
+                "internal/base",
+                "internal/datastore",
+                "internal/log",
+                "internal/remote_api",
+                "internal/urlfetch",
+                "urlfetch"
+            ]
+        }
+    ]
+}

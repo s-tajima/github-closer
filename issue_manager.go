@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"github.com/google/go-github/github"
@@ -38,7 +39,7 @@ func NewIssueManager(organization string, repository string, team string, token 
 
 func (im *IssueManager) FindIssues(spec string) ([]*github.Issue, error) {
 	queryString := im.buildQuery(spec)
-	searchResult, _, err := im.Client.Search.Issues(queryString, &github.SearchOptions{})
+	searchResult, _, err := im.Client.Search.Issues(context.Background(), queryString, &github.SearchOptions{})
 	if err != nil {
 		return nil, err
 	}
@@ -74,7 +75,7 @@ func (im *IssueManager) Close(issue *github.Issue) (*github.Issue, error) {
 	issueRequest := &github.IssueRequest{}
 	issueRequest.State = String("closed")
 
-	i, _, err := im.Client.Issues.Edit(im.Organization, im.Repository, *issue.Number, issueRequest)
+	i, _, err := im.Client.Issues.Edit(context.Background(), im.Organization, im.Repository, *issue.Number, issueRequest)
 
 	return i, err
 }
@@ -90,20 +91,20 @@ func (im *IssueManager) isUpdatedWithinDuration(issue *github.Issue) bool {
 
 func (im *IssueManager) Comment(issue *github.Issue, comment string) bool {
 	ic := &github.IssueComment{Body: &comment}
-	_, _, err := im.Client.Issues.CreateComment(im.Organization, im.Repository, *issue.Number, ic)
+	_, _, err := im.Client.Issues.CreateComment(context.Background(), im.Organization, im.Repository, *issue.Number, ic)
 
 	return err != nil
 }
 
 func (im *IssueManager) findUsersByTeamName(name string) ([]*github.User, error) {
-	teams, _, err := im.Client.Repositories.ListTeams(im.Organization, im.Repository, nil)
+	teams, _, err := im.Client.Repositories.ListTeams(context.Background(), im.Organization, im.Repository, nil)
 	if err != nil {
 		return nil, err
 	}
 
 	for _, t := range teams {
 		if *t.Name == name {
-			users, _, err := im.Client.Organizations.ListTeamMembers(*t.ID, &github.OrganizationListTeamMembersOptions{})
+			users, _, err := im.Client.Organizations.ListTeamMembers(context.Background(), *t.ID, &github.OrganizationListTeamMembersOptions{})
 			return users, err
 		}
 	}
